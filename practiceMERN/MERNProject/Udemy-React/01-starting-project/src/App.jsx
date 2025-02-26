@@ -1,16 +1,16 @@
 import reactImg from "./assets/react-core-concepts.png";
-import componentsImg from "./assets/components.png"
-import propsImg from "./assets/config.png"
-const reactDescription = ['Fundamental','Crucial','Core'];
+import componentsImg from "./assets/components.png";
+import propsImg from "./assets/config.png";
+const reactDescription = ['Fundamental', 'Crucial', 'Core'];
 
 function genRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
 function Components(props) {
-  return(
+  return (
     <li>
-      <img src={props.img} />
+      <img src={props.img} alt={props.title} />
       <h3>{props.title}</h3>
       <p>{props.description}</p>
     </li>
@@ -41,12 +41,12 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <Components 
+            <Components
               title="Components"
               description="The core UI building block"
               img={componentsImg}
             />
-            <Components 
+            <Components
               title="Props"
               description=""
               img={propsImg}
@@ -55,7 +55,7 @@ function App() {
             <Components />
           </ul>
         </section>
-        
+
       </main>
     </div>
   );
