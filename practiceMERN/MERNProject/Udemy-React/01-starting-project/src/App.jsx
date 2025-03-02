@@ -32,11 +32,13 @@ function Components({ description, title, img }) {
 
 // Implementation 4, 5
 function Components1Attr({ props }) {
-  const {title, description, img} = props;  {/* Implementation 4: You can 'destructure' the object into respective variables */}
+  const {title, description, img} = props;  {/* Implementation 4: You can 'destructure' the object into respective variables. 
+                                                Alt: Destructure the prop */}
   return (
     <li>
       <img src={img} alt={title}/>  {/* IM4 */}
-      <h3>{props.title}</h3>  {/* Implementation 5: Or you can pick out the attribute from passed object */}
+      <h3>{props.title}</h3>  {/* Implementation 5: Or you can pick out the attribute from passed object. 
+                                  Alt: Or pick out the properties from the passed prop object */}
       <p>{description}</p>
     </li>
   )
@@ -68,7 +70,8 @@ function App() {
           <h2>Core Concepts</h2>
           <ul>
 
-            {/* Implementation 1: You can manually pass the attribute with values when calling the component */}
+            {/* Implementation 1: You can manually pass the attribute with values when calling the component.
+                Alt: Manually set the value of each prop when calling the component */}
             <Components
               img={componentsImg}
               title="Components"
@@ -76,18 +79,20 @@ function App() {
             />
 
             {/* Implementation 2: You can use the 'spread' operator when passing the object 
-                  to pass a "shallow" copy of each of its attributes */}
+                  to pass a "shallow" copy of each of its attributes.
+                Alt: If the props are batched in a single object, you pass that spreaded object */}
             <Components {...CORE_CONCEPTS[1]}/>
 
             {/* Implementation 3: You can pass the attributes which the component accepts 
-                  and assign value of object's properties to each of them */}
+                  and assign value of object's properties to each of them.
+                Alt: Manually pass each prop by assigning each value from object's properties */}
             <Components
               img={CORE_CONCEPTS[2].img}
               description={CORE_CONCEPTS[2].description}
               title={CORE_CONCEPTS[2].title}
             />
 
-            {/* Implementation 4, 5 */}
+            {/* Implementation 4, 5: Pass the object from data.js with index as prop */}
             <Components1Attr 
               props = {CORE_CONCEPTS[3]}
             />
